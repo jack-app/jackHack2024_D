@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameQuit : MonoBehaviour
+public class BackTitle : MonoBehaviour
 {
+    public GameObject panel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,8 @@ public class GameQuit : MonoBehaviour
         
     }
 
-    public void Exit()
+    public void PanelOff()
     {
-        Application.Quit();
+        panel.SetActive(false);
     }
 }
