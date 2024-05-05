@@ -16,10 +16,14 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Questionから配列の取得
+        Question question = GetComponent<Question>();
+        // 画像の名前を取得
+        string picname = question.QuestionSen[0, 0];
         // シーンの画像配置
         GameObject image_object = GameObject.Find("Scene");
         Image image_component = image_object.GetComponent<Image>();
-        Texture2D texture = Resources.Load("test") as Texture2D;
+        Texture2D texture = Resources.Load(picname) as Texture2D;
         image_component.sprite = Sprite.Create(texture,
                                 new Rect(0, 0, texture.width, texture.height),
                                 Vector2.zero);
