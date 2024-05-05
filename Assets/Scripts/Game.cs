@@ -12,13 +12,14 @@ public class Game : MonoBehaviour
     public TextMeshProUGUI popuptext;
 
     public TextMeshProUGUI explanatorytext;
+    public Question question;
     int i = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         // Questionから配列の取得
-        Question question = GetComponent<Question>();
+        question = GetComponent<Question>();
         // 画像の名前を取得
         string picname = question.QuestionSen[0, 0];
         // シーンの画像配置
@@ -60,6 +61,9 @@ public class Game : MonoBehaviour
 
     void BtnOnClick(GameObject btn)
     {
+        GameObject image_object = GameObject.Find("Scene");
+        Image image_component = image_object.GetComponent<Image>();
+
         // 正解・不正解の表示
         Debug.Log("button: " + btn.name);
         popuptext.text = "test";
@@ -72,9 +76,16 @@ public class Game : MonoBehaviour
         StartCoroutine(DelayCoroutine(3,() =>
         {
         // ボタンの再設置
-        InstantiateUIBtn(parent, "ButtonL", -136, -110, "ButtonL");
-        InstantiateUIBtn(parent, "ButtonR", 136, -110, "ButtonR");
+        InstantiateUIBtn(parent, "ButtonL", -136, -110, question.QuestionSen[i, 2]);
+        InstantiateUIBtn(parent, "ButtonR", 136, -110, question.QuestionSen[i, 3]);
         popuptext.text = "";
+        string picname = question.QuestionSen[i,0];
+        Texture2D texture = Resources.Load(picname) as Texture2D;
+        image_component.sprite = Sprite.Create(texture,
+                                new Rect(0, 0, texture.width, texture.height),
+                                Vector2.zero);
+        explanatorytext.text = question.QuestionSen[i,1];
+        i += 1;
         }));
     }
 
