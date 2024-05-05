@@ -16,9 +16,9 @@ public class idou : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //‚±‚±‚©‚çƒWƒ‡[ƒWˆÚ“®
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Wï¿½ï¿½ï¿½[ï¿½Wï¿½Ú“ï¿½
         if (count <= 300)
-        { transform.Translate(2.1f, 0, 0);
+        { transform.Translate(1.9f, 0, 0);
             count += 1;
         }
        
