@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // シーンの画像配置
         GameObject image_object = GameObject.Find("Scene");
         Image image_component = image_object.GetComponent<Image>();
         Texture2D texture = Resources.Load("test") as Texture2D;
@@ -21,8 +22,9 @@ public class Game : MonoBehaviour
                                 new Rect(0, 0, texture.width, texture.height),
                                 Vector2.zero);
 
-        InstantiateUIBtn(parent, "ButtonL", -136, -110);
-        InstantiateUIBtn(parent, "ButtonR", 136, -110);
+        // ボタン設置
+        InstantiateUIBtn(parent, "ButtonL", -136, -110, "ButtonL");
+        InstantiateUIBtn(parent, "ButtonR", 136, -110, "ButtonR");
 
     }
 
@@ -32,13 +34,15 @@ public class Game : MonoBehaviour
         
     }
 
-    public void InstantiateUIBtn(GameObject parent, string name, float pos_x, float pos_y)
+    public void InstantiateUIBtn(GameObject parent, string name, float pos_x, float pos_y, string buttontext)
     {
         GameObject ui_btn = Instantiate(this.btn, new Vector3(pos_x, pos_y, 1), Quaternion.identity);
 
         // パネルを親に指定
         ui_btn.transform.SetParent(this.parent.transform,false);
         ui_btn.name = name;
+        TextMeshProUGUI ui_btn_text = ui_btn.GetComponentInChildren<TextMeshProUGUI>();
+        ui_btn_text.text = buttontext;
 
         // クリックイベントを付与
         ui_btn.GetComponent<Button>().onClick.AddListener(() => BtnOnClick(ui_btn));
@@ -46,8 +50,10 @@ public class Game : MonoBehaviour
 
     void BtnOnClick(GameObject btn)
     {
+        // 正解・不正解の表示
         Debug.Log("button: " + btn.name);
         popuptext.text = "test";
+        // ボタンの破壊
         GameObject obj = GameObject.Find("ButtonL");
         Destroy(obj);
         obj = GameObject.Find("ButtonR");
@@ -55,8 +61,9 @@ public class Game : MonoBehaviour
         
         StartCoroutine(DelayCoroutine(3,() =>
         {
-        InstantiateUIBtn(parent, "ButtonL", -136, -110);
-        InstantiateUIBtn(parent, "ButtonR", 136, -110);
+        // ボタンの再設置
+        InstantiateUIBtn(parent, "ButtonL", -136, -110, "ButtonL");
+        InstantiateUIBtn(parent, "ButtonR", 136, -110, "ButtonR");
         popuptext.text = "";
         }));
     }
