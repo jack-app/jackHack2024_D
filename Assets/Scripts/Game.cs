@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     public TextMeshProUGUI popuptext;
 
     public TextMeshProUGUI explanatorytext;
+    int i = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +30,11 @@ public class Game : MonoBehaviour
                                 Vector2.zero);
         
         // シーンの説明文
-        explanatorytext.text = "testtesttest";
+        explanatorytext.text = question.QuestionSen[0,1];
 
         // ボタン設置
-        InstantiateUIBtn(parent, "ButtonL", -136, -110, "ButtonL");
-        InstantiateUIBtn(parent, "ButtonR", 136, -110, "ButtonR");
+        InstantiateUIBtn(parent, "ButtonL", -136, -110, question.QuestionSen[0,2]);
+        InstantiateUIBtn(parent, "ButtonR", 136, -110, question.QuestionSen[0,3]);
 
     }
 
