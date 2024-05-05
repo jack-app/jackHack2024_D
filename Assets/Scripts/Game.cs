@@ -11,6 +11,8 @@ public class Game : MonoBehaviour
     public GameObject parent;
     public TextMeshProUGUI popuptext;
 
+    public TextMeshProUGUI explanatorytext;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,9 @@ public class Game : MonoBehaviour
         image_component.sprite = Sprite.Create(texture,
                                 new Rect(0, 0, texture.width, texture.height),
                                 Vector2.zero);
+        
+        // シーンの説明文
+        explanatorytext.text = "testtesttest";
 
         // ボタン設置
         InstantiateUIBtn(parent, "ButtonL", -136, -110, "ButtonL");
