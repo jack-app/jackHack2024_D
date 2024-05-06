@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ee70071791bb9b5498dd00e72256f55d
+guid: aa14144e3eff0294394b10061a9548e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6198077228021001635
-    second: Pic003_0
+      213: -2461064345572532570
+    second: blue_sofa_frame_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pic003_0
+      name: blue_sofa_frame_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 533
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -114,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ad21aa666ef30650800000000000000
-      internalID: 6198077228021001635
+      spriteID: 6ae15c8540b88ddd0800000000000000
+      internalID: -2461064345572532570
       vertices: []
       indices: 
       edges: []
@@ -131,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Pic003_0: 6198077228021001635
+      blue_sofa_frame_0: -2461064345572532570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
