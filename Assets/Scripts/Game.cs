@@ -34,8 +34,8 @@ public class Game : MonoBehaviour
         explanatorytext.text = question.QuestionSen[0,1];
 
         // ボタン設置
-        InstantiateUIBtn(parent, "ButtonL", -136, -110, question.QuestionSen[0,2]);
-        InstantiateUIBtn(parent, "ButtonR", 136, -110, question.QuestionSen[0,3]);
+        InstantiateUIBtn(parent, "ButtonL", -136, -140, question.QuestionSen[0,2]);
+        InstantiateUIBtn(parent, "ButtonR", 136, -140, question.QuestionSen[0,3]);
 
     }
 
@@ -76,8 +76,8 @@ public class Game : MonoBehaviour
         StartCoroutine(DelayCoroutine(3,() =>
         {
         // ボタンの再設置
-        InstantiateUIBtn(parent, "ButtonL", -136, -110, question.QuestionSen[i, 2]);
-        InstantiateUIBtn(parent, "ButtonR", 136, -110, question.QuestionSen[i, 3]);
+        InstantiateUIBtn(parent, "ButtonL", -136, -140, question.QuestionSen[i, 2]);
+        InstantiateUIBtn(parent, "ButtonR", 136, -140, question.QuestionSen[i, 3]);
         popuptext.text = "";
         string picname = question.QuestionSen[i,0];
         Texture2D texture = Resources.Load(picname) as Texture2D;
